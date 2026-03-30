@@ -1,1 +1,115 @@
 
+/* 🌌 Background Effects */
+body{
+  background: linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* 🧊 Glass Card */
+.card{
+  backdrop-filter: blur(18px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  transition: 0.4s;
+}
+
+.card:hover{
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+}
+
+/* 🔥 Gradient Text */
+.title{
+  background: linear-gradient(90deg,#ff8a00,#ff00c8,#00cfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 💡 Glow Button */
+.btn{
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background: linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
+  transition:0.5s;
+}
+
+.btn:hover::before{
+  left:100%;
+}
+
+/* ⚡ Neon Border */
+.timer-box{
+  border:2px solid transparent;
+  background:
+    linear-gradient(#0b0b22,#0b0b22) padding-box,
+    linear-gradient(90deg,#ff0000,#ff9900,#ff0000) border-box;
+  animation: borderGlow 3s linear infinite;
+}
+
+@keyframes borderGlow{
+  0%{filter:hue-rotate(0deg)}
+  100%{filter:hue-rotate(360deg)}
+}
+
+/* ✨ Floating Animation */
+.profile img{
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform: translateY(0)}
+  50%{transform: translateY(-10px)}
+  100%{transform: translateY(0)}
+}
+
+/* 🌟 Pulsing Live Text */
+.live{
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink{
+  0%{opacity:1}
+  50%{opacity:0.4}
+  100%{opacity:1}
+}
+
+/* 🎯 Smooth Hover Text */
+.name:hover{
+  letter-spacing: 2px;
+  color:#00e0ff;
+  transition:0.3s;
+}
+
+/* 📱 Mobile Enhancement */
+@media(max-width:480px){
+  .card{
+    border-radius:18px;
+    padding:16px;
+  }
+
+  .title{
+    font-size:22px;
+  }
+
+  .btn{
+    font-size:14px;
+    padding:12px;
+  }
+}
